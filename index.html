@@ -49,153 +49,167 @@
 
     <main class="mt-10">
         <!-- filter section -->
-        <div class="flex justify-between items-center">
+        <div id="filter-section" class="flex justify-between items-center">
             <h1 id="current-filter" class="text-xl font-bold">All</h1>
             <div class="space-x-2">
-                <button id="btn-thriving-filter" class="border border-white px-4 py-1 rounded cursor-pointer">Thriving</button>
-                <button id="btn-straggling-filter" class="border border-white px-4 py-1 rounded cursor-pointer">Straggling</button>
-                <button id="btn-all-filter" class="bg-black text-white px-4 py-1 rounded cursor-pointer">All</button>
+                <button id="btn-thriving-filter"
+                    class="btn-filter border border-white px-4 py-1 rounded cursor-pointer">Thriving</button>
+                <button id="btn-straggling-filter"
+                    class="btn-filter border border-white px-4 py-1 rounded cursor-pointer">Straggling</button>
+                <button id="btn-all-filter"
+                    class="btn-filter bg-black text-white border border-white px-4 py-1 rounded cursor-pointer">All</button>
             </div>
         </div>
 
         <!-- posts -->
-        <section class="mt-10 grid gap-10">
+        <section id="posts" class="mt-10 grid gap-10">
             <!-- Maple Leaf -->
-            <div class="bg-white p-8 rounded-lg shadow">
+            <div class="bg-white p-8 rounded-lg shadow-2xl">
                 <img src="./assests/maple-leaf.webp" alt="maple-leaf" class="rounded-lg w-full h-60 object-cover">
 
                 <div class="mt-4 space-y-2">
                     <h1 class="text-xl font-bold">Maple Leaf</h1>
 
                     <p>Type:
-                        <span class="bg-amber-400 text-white px-3 py-0.5 rounded-full text-sm">
-                            Leaf
+                        <span id="type" class="bg-amber-400 text-white px-3 py-0.5 rounded-full text-sm">
+                            leaf
                         </span>
                     </p>
 
                     <p>Status:
-                        <span class="lowercase bg-green-500 px-3 py-0.5 font-bold text-white rounded-full text-sm">
-                            Thriving
+                        <span id="status"
+                            class="lowercase bg-black px-3 py-0.5 font-bold text-white rounded-full text-sm">
+                            not applicable
                         </span>
                     </p>
 
                     <p class="text-neutral-500">
-                        Plantation Date: <span>12 Jan 2026</span>
+                        Plantation Date: <span id="plantation-date">12 Jan 2026</span>
                     </p>
                 </div>
 
                 <div class="mt-5 space-x-2">
-                    <button class="bg-green-500 text-white font-bold px-4 py-1 rounded cursor-pointer">
+                    <button
+                        class="btn-make-thriving bg-green-500 text-white font-bold px-4 py-1 rounded cursor-pointer">
                         Thriving
                     </button>
-                    <button class="bg-red-400 text-white font-bold px-4 py-1 rounded cursor-pointer">
-                        Straggling
-                    </button>
-                </div>
-            </div>
-
-            <!-- Aloe Vera -->
-            <div class="bg-white p-8 rounded-lg shadow">
-                <img src="./assests/aloe-vera.webp" alt="aloe-vera" class="rounded-lg w-full h-60 object-cover">
-
-                <div class="mt-4 space-y-2">
-                    <h1 class="text-xl font-bold">Aloe Vera</h1>
-
-                    <p>Type:
-                        <span class="bg-amber-400 text-white px-3 py-0.5 rounded-full text-sm">
-                            Medicinal Plant
-                        </span>
-                    </p>
-
-                    <p>Status:
-                        <span class="lowercase bg-green-500 px-3 py-0.5 font-bold text-white rounded-full text-sm">
-                            Thriving
-                        </span>
-                    </p>
-
-                    <p class="text-neutral-500">
-                        Plantation Date: <span>01 Mar 2026</span>
-                    </p>
-                </div>
-
-                <div class="mt-5 space-x-2">
-                    <button class="bg-green-500 text-white font-bold px-4 py-1 rounded cursor-pointer">
-                        Thriving
-                    </button>
-                    <button class="bg-red-400 text-white font-bold px-4 py-1 rounded cursor-pointer">
+                    <button
+                        class="btn-make-straggling bg-red-400 text-white font-bold px-4 py-1 rounded cursor-pointer">
                         Straggling
                     </button>
                 </div>
             </div>
 
             <!-- White Frangipani -->
-            <div class="bg-white p-8 rounded-lg shadow">
+            <div class="bg-white p-8 rounded-lg shadow-2xl">
                 <img src="./assests/kath-golap.jpeg" alt="white-frangipani" class="rounded-lg w-full h-60 object-cover">
 
                 <div class="mt-4 space-y-2">
                     <h1 class="text-xl font-bold">White Frangipani</h1>
 
                     <p>Type:
-                        <span class="bg-amber-400 text-white px-3 py-0.5 rounded-full text-sm">
-                            Flower
+                        <span id="type" class="bg-amber-400 text-white px-3 py-0.5 rounded-full text-sm">
+                            flower
                         </span>
                     </p>
 
                     <p>Status:
-                        <span class="lowercase bg-green-500 px-3 py-0.5 font-bold text-white rounded-full text-sm">
-                            Thriving
+                        <span id="status"
+                            class="lowercase bg-black px-3 py-0.5 font-bold text-white rounded-full text-sm">
+                            not applicable
                         </span>
                     </p>
 
                     <p class="text-neutral-500">
-                        Plantation Date: <span>01 Mar 2026</span>
+                        Plantation Date: <span id="plantation-date">12 Jan 2026</span>
                     </p>
                 </div>
 
                 <div class="mt-5 space-x-2">
-                    <button class="bg-green-500 text-white font-bold px-4 py-1 rounded cursor-pointer">
+                    <button
+                        class="btn-make-thriving bg-green-500 text-white font-bold px-4 py-1 rounded cursor-pointer">
                         Thriving
                     </button>
-                    <button class="bg-red-400 text-white font-bold px-4 py-1 rounded cursor-pointer">
+                    <button
+                        class="btn-make-straggling bg-red-400 text-white font-bold px-4 py-1 rounded cursor-pointer">
                         Straggling
                     </button>
                 </div>
             </div>
 
             <!-- Cactus -->
-            <div class="bg-white p-8 rounded-lg shadow">
+            <div class="bg-white p-8 rounded-lg shadow-2xl">
                 <img src="./assests/cactus.jpg" alt="cactus" class="rounded-lg w-full h-60 object-cover">
 
                 <div class="mt-4 space-y-2">
                     <h1 class="text-xl font-bold">Cactus</h1>
 
                     <p>Type:
-                        <span class="bg-amber-400 text-white px-3 py-0.5 rounded-full text-sm">
-                            Succulent
+                        <span id="type" class="bg-amber-400 text-white px-3 py-0.5 rounded-full text-sm">
+                            succulent
                         </span>
                     </p>
 
                     <p>Status:
-                        <span class="lowercase bg-green-500 px-3 py-0.5 font-bold text-white rounded-full text-sm">
-                            Thriving
+                        <span id="status"
+                            class="lowercase bg-black px-3 py-0.5 font-bold text-white rounded-full text-sm">
+                            not applicable
                         </span>
                     </p>
 
                     <p class="text-neutral-500">
-                        Plantation Date: <span>01 Mar 2026</span>
+                        Plantation Date: <span id="plantation-date">12 Jan 2026</span>
                     </p>
                 </div>
 
                 <div class="mt-5 space-x-2">
-                    <button class="bg-green-500 text-white font-bold px-4 py-1 rounded cursor-pointer">
+                    <button
+                        class="btn-make-thriving bg-green-500 text-white font-bold px-4 py-1 rounded cursor-pointer">
                         Thriving
                     </button>
-                    <button class="bg-red-400 text-white font-bold px-4 py-1 rounded cursor-pointer">
+                    <button
+                        class="btn-make-straggling bg-red-400 text-white font-bold px-4 py-1 rounded cursor-pointer">
                         Straggling
                     </button>
                 </div>
             </div>
 
+            <!-- Aloe Vera -->
+            <div class="bg-white p-8 rounded-lg shadow-2xl">
+                <img src="./assests/aloe-vera.webp" alt="aloe-vera" class="rounded-lg w-full h-60 object-cover">
+
+                <div class="mt-4 space-y-2">
+                    <h1 class="text-xl font-bold">Aloe Vera</h1>
+
+                    <p>Type:
+                        <span id="type" class="bg-amber-400 text-white px-3 py-0.5 rounded-full text-sm">
+                            medicinal plant
+                        </span>
+                    </p>
+
+                    <p>Status:
+                        <span id="status"
+                            class="lowercase bg-black px-3 py-0.5 font-bold text-white rounded-full text-sm">
+                            not applicable
+                        </span>
+                    </p>
+
+                    <p class="text-neutral-500">
+                        Plantation Date: <span id="plantation-date">12 Jan 2026</span>
+                    </p>
+                </div>
+
+                <div class="mt-5 space-x-2">
+                    <button
+                        class="btn-make-thriving bg-green-500 text-white font-bold px-4 py-1 rounded cursor-pointer">
+                        Thriving
+                    </button>
+                    <button
+                        class="btn-make-straggling bg-red-400 text-white font-bold px-4 py-1 rounded cursor-pointer">
+                        Straggling
+                    </button>
+                </div>
+            </div>
         </section>
     </main>
     <script src="./script.js"></script>
