@@ -33,15 +33,15 @@
         <!-- status -->
         <div class="mt-5 grid grid-cols-3 gap-4">
             <div class="bg-gray-600 text-white rounded cursor-pointer-xl px-5 py-2">
-                <h2 class="font-bold text-2xl">0</h2>
+                <h2 id="total-count" class="font-bold text-2xl">0</h2>
                 <h4 class="text-xl">Total</h4>
             </div>
             <div class="bg-green-600 text-white rounded cursor-pointer-xl px-5 py-2">
-                <h2 class="font-bold text-2xl">0</h2>
+                <h2 id="thriving-count" class="font-bold text-2xl">0</h2>
                 <h4 class="text-xl">Thriving</h4>
             </div>
             <div class="bg-red-400 text-white rounded cursor-pointer-xl px-5 py-2">
-                <h2 class="font-bold text-2xl">0</h2>
+                <h2 id="straggling-count" class="font-bold text-2xl">0</h2>
                 <h4 class="text-xl">Straggling</h4>
             </div>
         </div>
@@ -62,7 +62,7 @@
         </div>
 
         <!-- posts -->
-        <section id="posts" class="mt-10 grid gap-10">
+        <section id="all-posts" class="posts mt-10 space-y-10">
             <!-- Maple Leaf -->
             <div class="bg-white p-8 rounded-lg shadow-2xl">
                 <img src="./assests/maple-leaf.webp" alt="maple-leaf" class="rounded-lg w-full h-60 object-cover">
@@ -211,6 +211,13 @@
                 </div>
             </div>
         </section>
+
+        <section id="thriving-posts" class="posts hidden mt-10 space-y-10">
+        </section>
+
+        <section id="straggling-posts" class="posts hidden mt-10 space-y-10">
+        </section>
+
     </main>
     <script src="./script.js"></script>
 </body>
