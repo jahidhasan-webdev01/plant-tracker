@@ -53,8 +53,8 @@ function addFilterButtonDesign(_id) {
     btn.classList.add("bg-black", "text-white");
 }
 
-const thrivingPlants = [];
-const stragglingPlants = [];
+let thrivingPlants = [];
+let stragglingPlants = [];
 
 // Event Delegation
 document.querySelector(".posts").addEventListener("click", function (event) {
@@ -70,6 +70,9 @@ document.querySelector(".posts").addEventListener("click", function (event) {
 function handleThriving(e) {
     const plantInfo = e.target.parentNode.parentNode;
     const plantName = plantInfo.querySelector("h1").innerText;
+
+    // Remove from other array: if already there
+    stragglingPlants = stragglingPlants.filter(plant => plant.name !== plantName);
 
     const isAlreadyThriving = !!thrivingPlants.find(plant => plant.name === plantName);
 
@@ -88,7 +91,7 @@ function handleThriving(e) {
         const data = {
             name: plantName,
             type,
-            status,
+            status: "thriving",
             plantationDate,
             imageURL,
         }
@@ -116,6 +119,9 @@ function handleStraggling(e) {
     const plantInfo = e.target.parentNode.parentNode;
     const plantName = plantInfo.querySelector("h1").innerText;
 
+    // Remove from other array: if already there
+    thrivingPlants = thrivingPlants.filter(plant => plant.name !== plantName);
+
     const isAlreadyStraggling = !!stragglingPlants.find(plant => plant.name === plantName);
 
     if (!isAlreadyStraggling) {
@@ -133,7 +139,7 @@ function handleStraggling(e) {
         const data = {
             name: plantName,
             type,
-            status,
+            status: "straggling",
             plantationDate,
             imageURL,
         }
@@ -180,13 +186,21 @@ function disableThriving(e) {
 function render(sectionEl, data) {
     sectionEl.innerHTML = '';
 
-    data.forEach(plant => {
-        console.log(plant)
-        const newPost = document.createElement("div");
+    if (data.length < 1) {
+        const emptyMessage = document.createElement("div")
+        emptyMessage.innerHTML = `
+        <h1 class="mt-20 text-xl font-bold text-center">Nothing in the list
+        <i class="fa-solid fa-book-open"></i> </h1>
+        `
 
-        newPost.innerHTML = `
+        sectionEl.appendChild(emptyMessage);
+    } else {
+        data.forEach(plant => {
+            const newPost = document.createElement("div");
+
+            newPost.innerHTML = `
         <div class="bg-white p-8 rounded-lg shadow-2xl">
-                <img src="./assests/maple-leaf.webp" alt="maple-leaf" class="rounded-lg w-full h-60 object-cover">
+                <img src="${plant.imageURL}" alt="maple-leaf" class="rounded-lg w-full h-60 object-cover">
 
                 <div class="mt-4 space-y-2">
                     <h1 class="text-xl font-bold">${plant.name}</h1>
@@ -199,7 +213,7 @@ function render(sectionEl, data) {
 
                     <p>Status:
                         <span id="status"
-                            class="lowercase bg-black px-3 py-0.5 font-bold text-white rounded-full text-sm">
+                            class="lowercase ${plant.status === "thriving" ? "bg-green-600" : "bg-red-400"}  px-3 py-0.5 font-bold text-white rounded-full text-sm">
                             ${plant.status}
                         </span>
                     </p>
@@ -211,11 +225,9 @@ function render(sectionEl, data) {
             </div>
         `
 
-        sectionEl.appendChild(newPost);
-
-    })
-
-
+            sectionEl.appendChild(newPost);
+        })
+    }
 }
 
 function count() {
